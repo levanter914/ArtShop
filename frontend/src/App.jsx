@@ -10,24 +10,29 @@ import Contact from "./pages/Contact";
 import PlaceOrder from "./pages/PlaceOrder";
 import Collection from "./pages/Collection";
 import Navbar from "./components/Navbar";
+import Particle from "./components/Particle";
 
 const App = () => {
   return (
-    <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
-      <Navbar />
-      <Routes>
+    <div className="relative">
+      {/* Particle background */}
+      {/* <Particle className="absolute top-0 left-0 w-full h-screen z-[-1]" /> */}
 
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/placeorder" element={<PlaceOrder />} />
-        <Route path="/collection" element={<Collection />} />
-
-      </Routes>
+      {/* Foreground content */}
+      <div className="relative px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/placeorder" element={<PlaceOrder />} />
+          <Route path="/collection" element={<Collection />} />
+        </Routes>
+      </div>
     </div>
   );
 };
