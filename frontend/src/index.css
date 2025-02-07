@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Proxima Nova";
+    src: url("/frontend/src/assets/fonts/Proxima-Nova-Regular.woff2") format("woff2"),
+         url("/frontend/src/assets/fonts/Proxima-Nova-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: "Proxima Nova", sans-serif;
+  }
+  
