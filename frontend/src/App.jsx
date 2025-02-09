@@ -9,8 +9,8 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="relative">
-      <div className="relative px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+    <div className="min-h-screen">
+      <div className="relative">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -20,7 +20,6 @@ const App = () => {
           <Route path="/about" element={<About />} />
 
           <Route path="/contact" element={<Contact />} />
-  
         </Routes>
         <Footer />
       </div>
