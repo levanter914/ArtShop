@@ -44,7 +44,7 @@ const Home = () => {
       ></div>
 
       {/* Scrolling Text */}
-      <div className="flex items-center justify-center min-h-screen w-full text-center bg-black/10">
+      <div className="flex items-center justify-center min-h-screen w-full text-center bg-black/30">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}

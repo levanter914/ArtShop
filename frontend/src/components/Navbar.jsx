@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaInstagram, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
-import logo from "../assets/logoblack.png";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,19 +36,19 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Artist Logo"
-              className="h-8 md:h-10 cursor-pointer"
+              className="h-16 md:h-20 cursor-pointer"
             />
           </Link>
         </div>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex justify-center">
-          <ul className="flex space-x-10 text-xl text-black">
+        <div className="hidden md:flex justify-center font-bold padding-left-350">
+          <ul className="flex space-x-10 text-xl text-white pr-[120px]">
             {["HOME", "WORK", "ABOUT", "CONTACT"].map((item, index) => (
               <li key={index}>
                 <Link
                   to={item === "HOME" ? "/" : `/${item.toLowerCase()}`}
-                  className="font-custom"
+                  className="font-bold"
                 >
                   {item}
                 </Link>
@@ -58,26 +58,26 @@ const Navbar = () => {
         </div>
 
         {/* Social Media Icons (Desktop) */}
-        <div className="hidden md:flex space-x-4">
+        <div className="hidden md:flex space-x-4 flex justify-center">
           <a
             href="https://www.instagram.com/art_artistic_shubham/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram className="text-2xl text-black" />
+            <FaInstagram className="text-4xl text-white" />
           </a>
           <a
             href="https://www.youtube.com/channel/UCUq86ZWQAw62DbWNv369n8g"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaYoutube className="text-2xl text-black" />
+            <FaYoutube className="text-4xl text-white" />
           </a>
         </div>
 
         {/* Hamburger Menu Button (Mobile) */}
         <button
-          className="md:hidden text-black text-3xl focus:outline-none"
+          className="md:hidden text-white text-3xl focus:outline-none"
           onClick={() => setIsOpen(true)}
           aria-label="Open menu"
         >
@@ -88,7 +88,7 @@ const Navbar = () => {
       {/* Mobile Navigation Modal */}
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+          className="fixed md:hidden inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -104,8 +104,8 @@ const Navbar = () => {
             </button>
 
             {/* Mobile Navigation Links */}
-            <div className="flex flex-col space-y-4 text-xl text-black">
-              {["Home", "Work", "About", "Contact"].map((item, index) => (
+            <div className="flex flex-col space-y-4 justify-center items-center text-bold text-xl text-black">
+              {["HOME", "WORK", "ABOUT", "CONTACT"].map((item, index) => (
                 <div key={index}>
                   <Link
                     to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
