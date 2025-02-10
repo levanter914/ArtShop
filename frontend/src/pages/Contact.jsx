@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import bgImage from "../assets/landscape/bgcontact.jpg";
+import banner from "../assets/bannercontact2.png";
 import Form from "../components/Form";
 
 const Contact = () => {
@@ -30,7 +31,7 @@ const Contact = () => {
       </div>
       <Form />
       <div className="relative">
-          <img src="./src/assets/bannercontact2.png" alt="Banner" className="w-full" />
+          <img src={banner} alt="Banner" className="w-full" />
           <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold text-center px-4">
             Follow on Instagram<br/>for the latest updates.
           </div>
