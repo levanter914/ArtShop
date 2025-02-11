@@ -3,7 +3,7 @@ import { FaInstagram, FaFacebook, FaYoutube, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-black text-white py-6 flex flex-col items-center mt-auto">
+    <div className="w-full bg-white text-white py-6 flex flex-col items-center mt-auto">
       {/* Social Links */}
       <div className="flex space-x-6 mb-4">
         <a
@@ -13,7 +13,7 @@ const Footer = () => {
           aria-label="Visit Instagram profile"
           className="text-2xl hover:text-gray-600"
         >
-          <FaInstagram />
+          <FaInstagram className="text-black"/>
         </a>
         <a
           href="https://www.facebook.com/artartisticshubham"
@@ -22,7 +22,7 @@ const Footer = () => {
           aria-label="Visit Facebook profile"
           className="text-2xl hover:text-gray-600"
         >
-          <FaFacebook />
+          <FaFacebook className="text-black"/>
         </a>
         <a
           href="https://www.youtube.com/channel/UCUq86ZWQAw62DbWNv369n8g"
@@ -31,19 +31,19 @@ const Footer = () => {
           aria-label="Visit YouTube profile"
           className="text-2xl hover:text-gray-600"
         >
-          <FaYoutube />
+          <FaYoutube className="text-black"/>
         </a>
         <a
           href="mailto:artartisticshubham@gmail.com"
           aria-label="Send email"
           className="text-2xl hover:text-gray-600"
         >
-          <FaEnvelope />
+          <FaEnvelope className="text-black"/>
         </a>
       </div>
 
       {/* Copyright */}
-      <div className="text-sm text-gray-600">© 2025 by Shubham Kumar Singh</div>
+      <div className="text-sm text-gray-700">© 2025 by Shubham Kumar Singh</div>
     </div>
   );
 };

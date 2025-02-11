@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CiMail } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import Img from "../assets/contact3.jpg";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -51,14 +52,14 @@ const Form = () => {
 
   return (
     <div className="relative">
-      <div className="bg-white py-16">
+      <div className="bg-[#8e98b2] py-16">
         <div className="max-w-5xl mx-auto px-6 sm:px-12 lg:px-16">
           <div className="flex flex-col md:flex-row gap-24">
             {/* Left Section - w-1/2 */}
             <span className="flex flex-col space-y-5 w-full md:w-1/2">
               <div className="flex flex-col items-start space-y-4">
-                <CiMail className="w-10 h-10 text-black" />
-                <h2 className="text-4xl font-bold text-black">
+                <CiMail className="w-10 h-10 text-white" />
+                <h2 className="text-4xl font-bold text-white">
                   For commissions work and workshop inquiries, please email:
                 </h2>
                 <Link

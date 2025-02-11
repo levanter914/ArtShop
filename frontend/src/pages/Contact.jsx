@@ -31,9 +31,9 @@ const Contact = () => {
       </div>
       <Form />
       <div className="relative">
-          <img src={banner} alt="Banner" className="w-full" />
+          <img src={banner} alt="Banner" className="w-full " />
           <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold text-center px-4">
-            Follow on Instagram<br/>for the latest updates.
+            Follow along on<br/>Instagram<br/>for the latest updates.
           </div>
       </div>
     </div>
