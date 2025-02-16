@@ -74,7 +74,7 @@ const Form = () => {
 
             {/* Right Section - w-1/2 */}
             <span className="w-full md:w-1/2">
-              <h2 className="text-3xl font-bold mb-8 text-white">Contact</h2>
+              <h2 className="text-4xl font-bold mb-8 text-white">Contact</h2>
               <form onSubmit={handleSubmit} className="space-y-3">
                 {/* First & Last Name */}
                 <div className="flex flex-col sm:flex-row gap-4">
