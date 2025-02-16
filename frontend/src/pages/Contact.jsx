@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import bgImage from "../assets/landscape/bgcontact.jpg";
-import banner from "../assets/bannercontact2.png";
+import banner from "../assets/bannercontact3.svg";
 import Form from "../components/Form";
 
 const Contact = () => {
