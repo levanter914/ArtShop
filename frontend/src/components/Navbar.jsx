@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // Import useLocation
 import { motion } from "framer-motion";
 import { FaInstagram, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
 import logo from "../assets/logo.png";
@@ -7,14 +7,15 @@ import logo from "../assets/logo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
+  const location = useLocation(); // Get current route
   let lastScrollY = window.scrollY;
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        setShowNavbar(false); // Hide navbar when scrolling down
+        setShowNavbar(false);
       } else {
-        setShowNavbar(true); // Show navbar when scrolling up
+        setShowNavbar(true);
       }
       lastScrollY = window.scrollY;
     };
@@ -44,16 +45,22 @@ const Navbar = () => {
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex justify-center font-bold padding-left-350">
           <ul className="flex space-x-10 text-xl text-white pr-[120px]">
-            {["HOME", "WORK", "ABOUT", "CONTACT"].map((item, index) => (
-              <li key={index}>
-                <Link
-                  to={item === "HOME" ? "/" : `/${item.toLowerCase()}`}
-                  className="font-bold"
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
+            {["HOME", "WORK", "ABOUT", "CONTACT"].map((item, index) => {
+              const path = item === "HOME" ? "/" : `/${item.toLowerCase()}`;
+              const isActive = location.pathname === path; // Check if active
+              return (
+                <li key={index}>
+                  <Link
+                    to={path}
+                    className={`font-bold ${
+                      isActive ? "text-white opacity-60" : "text-white"
+                    } transition-colors duration-300`}
+                  >
+                    {item}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -105,17 +112,23 @@ const Navbar = () => {
 
             {/* Mobile Navigation Links */}
             <div className="flex flex-col space-y-4 justify-center items-center text-bold text-xl text-black">
-              {["HOME", "WORK", "ABOUT", "CONTACT"].map((item, index) => (
-                <div key={index}>
-                  <Link
-                    to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                    className="font-custom"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item}
-                  </Link>
-                </div>
-              ))}
+              {["HOME", "WORK", "ABOUT", "CONTACT"].map((item, index) => {
+                const path = item === "HOME" ? "/" : `/${item.toLowerCase()}`;
+                const isActive = location.pathname === path; // Check if active
+                return (
+                  <div key={index}>
+                    <Link
+                      to={path}
+                      className={`font-custom ${
+                        isActive ? "text-gray-500" : "text-black"
+                      } transition-colors duration-300`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item}
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
 
             {/* Social Media Icons (Mobile) */}
